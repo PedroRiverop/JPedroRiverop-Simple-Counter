@@ -18,7 +18,38 @@ function funcionContador () {
     counter ++;
 }
 
-setInterval(()=>{root.render(<Home time = {counter}/>,<div>
-    <button>Hola</button>
-  </div>) ; funcionContador();} , 1000);
+const Paramos = () =>{
+    funcionContador = function() {
+        counter;
+    }
+}
+const Reiniciar = () =>{
+    funcionContador = function() {
+        counter ++;
+    }
+}
+const Reset = () =>{
+    counter = 0;
+    funcionContador = function() {
+        counter ++;
+    }
+}
+const handleChange = (event) => {
+    counter=(event.target.valueAsNumber);
+    funcionContador = function() {
+        counter --;
+    }
+  };
+  const alerta = (event) => {
+   const timeAlert=(event.target.valueAsNumber);
+    funcionContador = function() {
+        if (timeAlert === counter) {
+            alert("El contador llego al tiempo " + timeAlert);
+        }
+        counter ++;
+        
+    }
+  };
+export {Paramos, Reiniciar, Reset, handleChange, alerta}
+setInterval(()=>{root.render(<Home time = {counter}/>) ; funcionContador();} , 1000);
 
