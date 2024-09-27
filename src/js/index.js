@@ -11,5 +11,14 @@ import Home from "./component/home.jsx";
 //render your react application
 const root = ReactDOM.createRoot(document.getElementById('app'))
 let counter = 0;
-setInterval(()=>{root.render(<Home time = {counter}/>) ; counter++ } , 1000);
+
+
+
+function funcionContador () {
+    counter ++;
+}
+
+setInterval(()=>{root.render(<Home time = {counter}/>,<div>
+    <button>Hola</button>
+  </div>) ; funcionContador();} , 1000);
 
