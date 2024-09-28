@@ -12,8 +12,6 @@ import Home from "./component/home.jsx";
 const root = ReactDOM.createRoot(document.getElementById('app'))
 let counter = 0;
 
-
-
 function funcionContador () {
     counter ++;
 }
